@@ -145,6 +145,35 @@
         border-radius: 18px;
         box-shadow: 0 4px 14px rgba(29, 27, 58, 0.2);
         scroll-snap-align: center;
+        cursor: zoom-in;
+        transition: transform 0.3s ease;
+      }
+
+      .shot-row img:hover {
+        transform: scale(1.02);
+      }
+
+      dialog.lightbox {
+        border: 0;
+        padding: 0;
+        background: transparent;
+        max-width: 96vw;
+        max-height: 96vh;
+        overflow: visible;
+      }
+
+      dialog.lightbox::backdrop {
+        background: rgba(10, 8, 30, 0.85);
+      }
+
+      dialog.lightbox img {
+        display: block;
+        max-width: 96vw;
+        max-height: 92vh;
+        width: auto;
+        height: auto;
+        border-radius: 18px;
+        cursor: zoom-out;
       }
 
       .levels {
@@ -380,6 +409,35 @@
         </div>
       </section>
     </main>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Screenshot preview">
+      <img src="" alt="" />
+    </dialog>
+
+    <script>
+      (function () {
+        var box = document.getElementById("lightbox");
+        var big = box.querySelector("img");
+        document.querySelectorAll(".shot-row img").forEach(function (img) {
+          img.tabIndex = 0;
+          img.addEventListener("click", open);
+          img.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              open.call(img);
+            }
+          });
+        });
+        function open() {
+          big.src = this.src;
+          big.alt = this.alt;
+          box.showModal();
+        }
+        box.addEventListener("click", function () {
+          box.close();
+        });
+      })();
+    </script>
 
     <footer>
       <div class="container">
