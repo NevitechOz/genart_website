@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "npm run build && npx http-server ."
+    "build": "tsc -p sites/genart",
+    "start": "npm run build && npx http-server sites/genart"
   },
   "keywords": [],
   "author": "dave tran",

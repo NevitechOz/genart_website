@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GenWord - Chinese, Japanese &amp; Korean Vocabulary</title>
+    <meta
+      name="description"
+      content="Learn Chinese, Japanese and Korean words with GenWord: HSK, JLPT and TOPIK collections, flashcards, quizzes, progress tracking and an AI word generator."
+    />
+    <meta name="author" content="Nevitech" />
+    <meta name="application-name" content="GenWord" />
+    <meta property="og:title" content="GenWord - Chinese, Japanese & Korean Vocabulary" />
+    <meta
+      property="og:description"
+      content="HSK, JLPT and TOPIK vocabulary with flashcards, quizzes, progress tracking and an AI word generator."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GenWord" />
+    <meta property="og:image" content="./images/og-image.jpg" />
+    <link rel="icon" href="./images/icon.png" />
+    <style>
+      :root {
+        --primary: #2b5fe8;
+        --accent: #6a3fd8;
+        --ink: #1d1b3a;
+        --muted: #5b5877;
+        --surface: #f4f2ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Roboto", -apple-system, "Segoe UI", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--ink);
+        background: white;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+
+      a {
+        color: var(--primary);
+      }
+
+      .hero {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: white;
+        padding: 4rem 0 5rem;
+        text-align: center;
+      }
+
+      .hero img {
+        width: 128px;
+        height: 128px;
+        border-radius: 28px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero h1 {
+        margin: 1rem 0 0.25rem;
+        font-size: 2.6rem;
+      }
+
+      .hero p {
+        margin: 0 auto;
+        max-width: 640px;
+        font-size: 1.2rem;
+        opacity: 0.92;
+      }
+
+      .store-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .store-button {
+        display: inline-block;
+        min-width: 220px;
+        padding: 0.9rem 1.8rem;
+        border-radius: 999px;
+        background: white;
+        color: var(--primary);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .store-button.soon {
+        background: rgba(255, 255, 255, 0.18);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        cursor: default;
+      }
+
+      .store-button small {
+        display: block;
+        font-weight: 400;
+        font-size: 0.75rem;
+        opacity: 0.85;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 1.9rem;
+        margin: 0 0 0.5rem;
+      }
+
+      .lead {
+        text-align: center;
+        color: var(--muted);
+        max-width: 640px;
+        margin: 0 auto 2.5rem;
+      }
+
+      .shots {
+        background: var(--surface);
+      }
+
+      .shot-row {
+        display: flex;
+        gap: 1.25rem;
+        overflow-x: auto;
+        padding: 0.5rem 0.25rem 1.25rem;
+        scroll-snap-type: x mandatory;
+      }
+
+      .shot-row img {
+        flex: 0 0 auto;
+        width: 240px;
+        height: auto;
+        border-radius: 18px;
+        box-shadow: 0 4px 14px rgba(29, 27, 58, 0.2);
+        scroll-snap-align: center;
+      }
+
+      .levels {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .card {
+        padding: 1.5rem;
+        border-radius: 14px;
+        background: var(--surface);
+      }
+
+      .card h3 {
+        margin: 0 0 0.25rem;
+      }
+
+      .card .tag {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+      }
+
+      .feature {
+        padding: 1.5rem;
+        border-radius: 14px;
+        border: 1px solid #e3e0f5;
+      }
+
+      .feature .icon {
+        font-size: 1.8rem;
+      }
+
+      .feature h3 {
+        margin: 0.4rem 0 0.25rem;
+      }
+
+      .feature p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .pro {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: white;
+        text-align: center;
+      }
+
+      .pro p {
+        max-width: 680px;
+        margin: 0.5rem auto 0;
+        opacity: 0.92;
+      }
+
+      footer {
+        padding: 2rem 0;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+        background: var(--surface);
+      }
+
+      footer nav a {
+        margin: 0 0.6rem;
+      }
+
+      @media (max-width: 600px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <img src="./images/icon.png" alt="GenWord app icon" />
+        <h1>GenWord</h1>
+        <p>
+          Build Chinese, Japanese and Korean vocabulary with HSK, JLPT and TOPIK
+          collections, flashcards and quizzes.
+        </p>
+        <!-- Switch to real links once the apps are public:
+             Play: https://play.google.com/store/apps/details?id=net.nevitech.genvocabmaster.android
+             App Store: https://apps.apple.com/app/id6815960123 -->
+        <div class="store-buttons">
+          <span class="store-button soon"
+            >Google Play<small>Coming soon</small></span
+          >
+          <span class="store-button soon"
+            >App Store<small>Coming soon</small></span
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="shots">
+        <div class="container">
+          <h2>Study smarter, every day</h2>
+          <p class="lead">
+            A daily study screen, word lists, quizzes and progress at a glance.
+          </p>
+          <div class="shot-row">
+            <img src="./images/01-today.jpg" alt="GenWord Today screen with a flashcard" />
+            <img src="./images/02-progress.jpg" alt="GenWord study progress" />
+            <img src="./images/03-words.jpg" alt="GenWord word list" />
+            <img src="./images/04-quiz.jpg" alt="GenWord vocabulary quiz" />
+            <img src="./images/05-ai.jpg" alt="GenWord AI word generator" />
+            <img src="./images/06-collections.jpg" alt="GenWord vocabulary collections" />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2>Three languages, every level</h2>
+          <p class="lead">
+            Pick the collections you want and switch between languages whenever
+            you like.
+          </p>
+          <div class="levels">
+            <div class="card">
+              <span class="tag">中文</span>
+              <h3>Chinese: HSK 1–6</h3>
+              <p>
+                Hanzi with pinyin, meanings and example sentences, from beginner
+                to advanced.
+              </p>
+            </div>
+            <div class="card">
+              <span class="tag">日本語</span>
+              <h3>Japanese: JLPT N5–N1</h3>
+              <p>
+                Kanji, hiragana and katakana words with readings and example
+                sentences.
+              </p>
+            </div>
+            <div class="card">
+              <span class="tag">한국어</span>
+              <h3>Korean: TOPIK I–II</h3>
+              <p>Hangul vocabulary with readings, meanings and examples.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background: var(--surface)">
+        <div class="container">
+          <h2>Everything you need to remember words</h2>
+          <p class="lead">&nbsp;</p>
+          <div class="features">
+            <div class="feature">
+              <div class="icon">🃏</div>
+              <h3>Flashcards</h3>
+              <p>
+                Every card shows the word, reading, meaning and an example
+                sentence with translation. Tap to reveal.
+              </p>
+            </div>
+            <div class="feature">
+              <div class="icon">🔊</div>
+              <h3>Listen and repeat</h3>
+              <p>
+                Hear words and example sentences read aloud to train listening
+                and pronunciation.
+              </p>
+            </div>
+            <div class="feature">
+              <div class="icon">📝</div>
+              <h3>Quizzes</h3>
+              <p>
+                Relaxed or timed quizzes built from your chosen collections or
+                words you have already studied.
+              </p>
+            </div>
+            <div class="feature">
+              <div class="icon">⭐</div>
+              <h3>Review list</h3>
+              <p>Save the hard words and come back to them again and again.</p>
+            </div>
+            <div class="feature">
+              <div class="icon">📈</div>
+              <h3>Progress tracking</h3>
+              <p>
+                See words studied and quiz results, and build a steady daily
+                habit.
+              </p>
+            </div>
+            <div class="feature">
+              <div class="icon">✈️</div>
+              <h3>Study offline</h3>
+              <p>
+                Bundled vocabulary works without a connection. English and
+                Vietnamese interface.
+              </p>
+            </div>
+            <div class="feature">
+              <div class="icon">✨</div>
+              <h3>AI word generator</h3>
+              <p>
+                Name any topic, such as travel, food or business, and GenWord
+                creates a new collection with readings, meanings and examples.
+                Uses optional GCoins.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pro">
+        <div class="container">
+          <h2>GenWord Pro</h2>
+          <p>
+            A one-time lifetime purchase, not a subscription. Removes ads,
+            unlocks the home-screen word widget and lock-screen words, and
+            includes 700 bonus GCoins for the AI word generator.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <nav>
+          <a href="https://genartstudio.org/pages/privacy">Privacy Policy</a>
+          <a href="https://genartstudio.org/pages/contact_us">Contact &amp; Support</a>
+          <a href="https://genartstudio.org/">GenArt AI Studio</a>
+        </nav>
+        <p>
+          GenWord is a study tool, not an official HSK, JLPT or TOPIK exam
+          service.
+        </p>
+        <p>&copy; 2026 Nevitech. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
