@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p sites/genart",
-    "start": "npm run build && npx http-server sites/genart"
+    "build": "tsc -p genart",
+    "start": "node scripts/serve.mjs",
+    "check": "node scripts/check-links.mjs"
   },
   "keywords": [],
   "author": "dave tran",

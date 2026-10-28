@@ -3,11 +3,243 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nevitech</title>
-    <meta http-equiv="refresh" content="0; url=/sites/nevitech/" />
-    <link rel="canonical" href="/sites/nevitech/" />
+    <title>Nevitech - Mobile Apps</title>
+    <meta
+      name="description"
+      content="Nevitech builds mobile apps: GenArt AI Studio for AI image generation and GenWord for learning Chinese, Japanese and Korean vocabulary."
+    />
+    <meta name="author" content="Nevitech" />
+    <meta property="og:title" content="Nevitech - Mobile Apps" />
+    <meta
+      property="og:description"
+      content="GenArt AI Studio and GenWord, mobile apps from Nevitech."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Nevitech" />
+    <link rel="icon" href="./images/genart-icon.webp" />
+    <style>
+      :root {
+        --primary: #2b5fe8;
+        --accent: #6a3fd8;
+        --ink: #1d1b3a;
+        --muted: #5b5877;
+        --surface: #f4f2ff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Roboto", -apple-system, "Segoe UI", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--ink);
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+      a {
+        color: var(--primary);
+      }
+      .hero {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: white;
+        padding: 4.5rem 0;
+        text-align: center;
+      }
+      .hero h1 {
+        margin: 0 0 0.5rem;
+        font-size: 2.8rem;
+        letter-spacing: 0.02em;
+      }
+      .hero p {
+        max-width: 620px;
+        margin: 0 auto;
+        font-size: 1.2rem;
+        opacity: 0.92;
+      }
+      section {
+        padding: 3.5rem 0;
+      }
+      h2 {
+        text-align: center;
+        font-size: 1.9rem;
+        margin: 0 0 2rem;
+      }
+      .apps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+      .app {
+        display: flex;
+        flex-direction: column;
+        padding: 1.75rem;
+        border-radius: 16px;
+        background: var(--surface);
+      }
+      .app img {
+        width: 88px;
+        height: 88px;
+        border-radius: 20px;
+        box-shadow: 0 3px 10px rgba(29, 27, 58, 0.25);
+      }
+      .app h3 a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .app h3 a:hover {
+        text-decoration: underline;
+      }
+      .app h3 {
+        margin: 1rem 0 0.25rem;
+        font-size: 1.4rem;
+      }
+      .app p {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        flex: 1;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.5rem 1.1rem;
+        border-radius: 999px;
+        background: var(--primary);
+        color: white;
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .btn.ghost {
+        background: white;
+        color: var(--primary);
+        border: 1px solid var(--primary);
+      }
+      .btn.soon {
+        background: #e3e0f5;
+        color: var(--muted);
+        cursor: default;
+      }
+      .about {
+        background: var(--surface);
+        text-align: center;
+      }
+      .about p {
+        max-width: 640px;
+        margin: 0 auto 1rem;
+        color: var(--muted);
+      }
+      .legal {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 1.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      footer {
+        padding: 1.5rem 0;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+    </style>
   </head>
   <body>
-    <p>Redirecting to <a href="/sites/nevitech/">Nevitech</a>…</p>
+    <header class="hero">
+      <div class="container">
+        <h1>Nevitech</h1>
+        <p>We build mobile apps that make creating and learning simpler.</p>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container">
+          <h2>Our apps</h2>
+          <div class="apps">
+            <article class="app">
+              <a href="./genart/"
+                ><img src="./images/genart-icon.webp" alt="GenArt AI Studio icon"
+              /></a>
+              <h3><a href="./genart/">GenArt AI Studio</a></h3>
+              <p>
+                Turn a text prompt into AI-generated artwork in seconds. Pick
+                from dozens of styles, refine your prompt, then save or share
+                the result.
+              </p>
+              <div class="links">
+                <a
+                  class="btn"
+                  href="https://play.google.com/store/apps/details?id=net.nevitech.genart"
+                  >Google Play</a
+                >
+                <a
+                  class="btn"
+                  href="https://apps.apple.com/us/app/genart-ai-studio/id6755963035"
+                  >App Store</a
+                >
+                <a class="btn ghost" href="./genart/">Website</a>
+              </div>
+            </article>
+
+            <article class="app">
+              <a href="./genword/"
+                ><img src="./images/genword-icon.png" alt="GenWord icon"
+              /></a>
+              <h3><a href="./genword/">GenWord</a></h3>
+              <p>
+                Learn Chinese, Japanese and Korean vocabulary with HSK, JLPT and
+                TOPIK collections, flashcards, quizzes, progress tracking and an
+                AI word generator.
+              </p>
+              <!-- Replace the "soon" buttons with real links once public:
+                   Play: https://play.google.com/store/apps/details?id=net.nevitech.genvocabmaster.android
+                   App Store: https://apps.apple.com/app/id6815960123 -->
+              <div class="links">
+                <span class="btn soon">Google Play: coming soon</span>
+                <span class="btn soon">App Store: coming soon</span>
+                <a class="btn ghost" href="./genword/">Website</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="container">
+          <h2>About Nevitech</h2>
+          <p>
+            Nevitech is an independent developer of mobile apps for Android and
+            iOS. Questions, feedback or support requests are welcome at
+            <a href="mailto:nevitechoz@gmail.com">nevitechoz@gmail.com</a>.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2>Legal and support</h2>
+          <ul class="legal">
+            <li><a href="./pages/privacy.html">Privacy Policy</a></li>
+            <li><a href="./pages/terms.html">Terms of Service</a></li>
+            <li><a href="./pages/copyright.html">Copyright Policy</a></li>
+            <li><a href="./pages/contact_us.html">Contact Us</a></li>
+            <li><a href="./pages/contact_us.html#account-deletion">Account Deletion</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">&copy; 2026 Nevitech. All rights reserved.</div>
+    </footer>
   </body>
 </html>

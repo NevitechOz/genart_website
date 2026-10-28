@@ -1,15 +1,21 @@
-# nevitech websites
+# Nevitech websites
 
-Static sites, one folder per subdomain. Deploy each folder as the document root of its own host.
+Static site. The repo root is the document root.
 
-| Folder | Subdomain | App |
-|---|---|---|
-| `sites/nevitech` | company root domain | Nevitech company site: app links, intros, legal links |
-| `sites/genart` | `genart.genartstudio.org` | GenArt AI Studio (TypeScript in `src/`, build with `npm run build`) |
-| `sites/genword` | `genword.genartstudio.org` | GenWord landing page (plain HTML) |
+| Path | What |
+|---|---|
+| `/` (`index.html`, `images/`) | Nevitech company site: apps, intros, legal links |
+| `/genart/` | GenArt AI Studio landing page |
+| `/genword/` | GenWord landing page |
+| `/pages/` | Shared legal pages: `privacy`, `terms`, `copyright`, `contact_us` (also served without `.html`, which the app stores link to) |
+| `/app-ads.txt` | Must stay at the root for ad networks |
 
-Preview GenArt: `npm start`. Preview GenWord: `npx http-server sites/genword`.
+All internal links are relative, so the site works at any host or path.
 
-DNS: add a `CNAME` record per subdomain pointing at the hosting provider, then attach the custom domain to the matching folder/site.
+## Commands
 
-Shared legal pages (privacy, terms, copyright, contact) live in `pages/` at the repo root so `genartstudio.org/pages/...` URLs used by the app stores keep working. Every site links to them.
+- `npm start` serves the site at http://localhost:8080 (clean URLs like `/pages/privacy` work).
+- `npm run check` starts the server, crawls every page and verifies every link, asset and `#fragment` returns 200. Add `-- --external` to also check external links.
+- `npm run build` compiles the TypeScript in `genart/src` (not used by the page).
+
+Run `npm run check` before pushing.
