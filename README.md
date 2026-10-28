@@ -11,3 +11,5 @@ Static sites, one folder per subdomain. Deploy each folder as the document root 
 Preview GenArt: `npm start`. Preview GenWord: `npx http-server sites/genword`.
 
 DNS: add a `CNAME` record per subdomain pointing at the hosting provider, then attach the custom domain to the matching folder/site.
+
+Shared legal pages (privacy, terms, copyright, contact) live in `pages/` at the repo root so `genartstudio.org/pages/...` URLs used by the app stores keep working. Every site links to them.
