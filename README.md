@@ -4,6 +4,7 @@ Static sites, one folder per subdomain. Deploy each folder as the document root 
 
 | Folder | Subdomain | App |
 |---|---|---|
+| `sites/nevitech` | company root domain | Nevitech company site: app links, intros, legal links |
 | `sites/genart` | `genart.genartstudio.org` | GenArt AI Studio (TypeScript in `src/`, build with `npm run build`) |
 | `sites/genword` | `genword.genartstudio.org` | GenWord landing page (plain HTML) |
 
