@@ -1,0 +1,24 @@
+:is(.btn, .store-button, .download-button) {
+  border-radius: 8px;
+}
+
+a:is(.btn, .store-button, .download-button) {
+  box-shadow: 0 1px 2px rgb(29 27 58 / 24%), 0 3px 6px rgb(29 27 58 / 16%);
+}
+
+a:is(.btn, .store-button, .download-button):hover {
+  box-shadow: 0 2px 4px rgb(29 27 58 / 24%), 0 5px 10px rgb(29 27 58 / 18%);
+}
+
+a:is(.btn, .store-button, .download-button):active {
+  box-shadow: 0 1px 2px rgb(29 27 58 / 24%);
+}
+
+.store-icon {
+  flex: none;
+  object-fit: contain;
+}
+
+.store-icon--light {
+  filter: invert(1);
+}
