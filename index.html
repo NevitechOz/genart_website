@@ -129,15 +129,19 @@
       }
       @container (max-width: 20rem) {
         .btn {
-          flex-direction: column;
-          min-height: 4.125rem;
+          gap: 0.25em;
           padding-inline: 0.25rem;
+        }
+        .btn .store-icon {
+          width: 0.75rem;
+          height: 0.75rem;
         }
       }
       .btn small {
         display: block;
         margin-top: 0.1rem;
         font-weight: 400;
+        white-space: nowrap;
       }
       .btn.ghost {
         background: white;
@@ -204,7 +208,7 @@
                   href="https://apps.apple.com/us/app/genart-ai-studio/id6755963035"
                 >
                   <img class="store-icon store-icon--light" src="./images/apple.svg" alt="" width="16" height="16" />
-                  App Store
+                  <span>App Store</span>
                 </a>
                 <a class="btn ghost" href="./genart/">Website</a>
               </div>
@@ -228,7 +232,7 @@
                   href="https://play.google.com/store/apps/details?id=net.nevitech.genvocabmaster.android"
                 >
                   <img class="store-icon" src="./images/google-play.svg" alt="" width="16" height="16" />
-                  Google Play
+                  <span>Google Play</span>
                 </a>
                 <span class="btn soon">
                   <img class="store-icon" src="./images/apple.svg" alt="" width="16" height="16" />
