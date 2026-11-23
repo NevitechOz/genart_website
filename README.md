@@ -7,6 +7,8 @@ Static site. The repo root is the document root.
 | `/` (`index.html`, `images/`) | Nevitech company site: apps, intros, legal links |
 | `/genart/` | GenArt AI Studio landing page |
 | `/genword/` | GenWord landing page |
+| `/genspeak/` | GenSpeak Mandarin speaking practice landing page |
+| `/genmeal/` | GenMeal offline meal planner landing page |
 | `/pages/` | Shared legal pages: `privacy`, `terms`, `copyright`, `contact_us` (also served without `.html`, which the app stores link to) |
 | `/app-ads.txt` | Must stay at the root for ad networks |
 

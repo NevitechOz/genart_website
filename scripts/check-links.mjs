@@ -65,8 +65,11 @@ for (const file of pages) {
   }
 }
 
-// Extensionless URLs and root files that the app stores / ad networks use.
-for (const p of ["/", "/genart/", "/genword/", "/pages/privacy", "/pages/terms", "/pages/copyright", "/pages/contact_us", "/app-ads.txt"]) {
+// App landing pages and stable URLs used by app stores and ad networks.
+for (const p of [
+  "/", "/genart/", "/genword/", "/genspeak/", "/genmeal/",
+  "/pages/privacy", "/pages/terms", "/pages/copyright", "/pages/contact_us", "/app-ads.txt",
+]) {
   checked++;
   const res = await fetchOnce(base + p);
   if (res.status !== 200) failures.push(`required URL ${p} -> ${res.status}`);

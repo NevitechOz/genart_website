@@ -6,13 +6,13 @@
     <title>Nevitech - Mobile Apps</title>
     <meta
       name="description"
-      content="Nevitech builds mobile apps: GenArt AI Studio for AI image generation and GenWord for learning Chinese, Japanese and Korean vocabulary."
+      content="Explore Nevitech's mobile apps: GenArt AI Studio for AI art, GenWord for vocabulary, GenSpeak for Mandarin speaking practice, and GenMeal for meal planning."
     />
     <meta name="author" content="Nevitech" />
     <meta property="og:title" content="Nevitech - Mobile Apps" />
     <meta
       property="og:description"
-      content="GenArt AI Studio and GenWord, mobile apps from Nevitech."
+      content="GenArt AI Studio, GenWord, GenSpeak and GenMeal: mobile apps from Nevitech."
     />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Nevitech" />
@@ -69,8 +69,13 @@
       }
       .apps {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1.5rem;
+      }
+      @media (max-width: 680px) {
+        .apps {
+          grid-template-columns: minmax(0, 1fr);
+        }
       }
       .app {
         display: flex;
@@ -156,7 +161,7 @@
     <header class="hero">
       <div class="container">
         <h1>Nevitech</h1>
-        <p>We build mobile apps that make creating and learning simpler.</p>
+        <p>We build mobile apps that make creating, learning and meal planning simpler.</p>
       </div>
     </header>
 
@@ -205,6 +210,36 @@
                 >
                 <span class="btn soon">App Store: coming soon</span>
                 <a class="btn ghost" href="./genword/">Website</a>
+              </div>
+            </article>
+
+            <article class="app">
+              <a href="./genspeak/"
+                ><img src="./images/genspeak-icon.webp" alt="GenSpeak icon"
+              /></a>
+              <h3><a href="./genspeak/">GenSpeak</a></h3>
+              <p>
+                Practise Mandarin speaking for HSK and HSKK with tone drills,
+                listen-and-repeat exercises, picture prompts and timed mock tests.
+              </p>
+              <div class="links">
+                <a class="btn ghost" href="./genspeak/">Website</a>
+                <span class="btn soon">In development</span>
+              </div>
+            </article>
+
+            <article class="app">
+              <a href="./genmeal/"
+                ><img src="./images/genmeal-icon.webp" alt="GenMeal icon"
+              /></a>
+              <h3><a href="./genmeal/">GenMeal</a></h3>
+              <p>
+                Plan a week of adult meals offline. Swap recipes, adjust portions,
+                see daily nutrition estimates and shop from one grocery checklist.
+              </p>
+              <div class="links">
+                <a class="btn ghost" href="./genmeal/">Website</a>
+                <span class="btn soon">In development</span>
               </div>
             </article>
           </div>
