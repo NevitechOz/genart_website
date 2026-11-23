@@ -1,0 +1,8 @@
+.store-icon {
+  flex: none;
+  object-fit: contain;
+}
+
+.store-icon--light {
+  filter: invert(1);
+}

@@ -17,6 +17,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Nevitech" />
     <link rel="icon" href="./images/genart-icon.webp" />
+    <link rel="stylesheet" href="./store-icons.css" />
     <style>
       :root {
         --primary: #2b5fe8;
@@ -80,11 +81,11 @@
       .app {
         display: flex;
         flex-direction: column;
-        padding: 1.75rem;
+        padding: clamp(1rem, 4vw, 1.75rem);
         border-radius: 16px;
         background: var(--surface);
       }
-      .app img {
+      .app > a > img {
         width: 88px;
         height: 88px;
         border-radius: 20px;
@@ -108,18 +109,36 @@
       }
       .links {
         display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem;
+        container-type: inline-size;
+        gap: 0.375rem;
       }
       .btn {
-        display: inline-block;
-        padding: 0.5rem 1.1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35em;
+        min-height: 44px;
+        padding: 0.35rem clamp(0.5rem, 1vw, 0.85rem);
         border-radius: 999px;
         background: var(--primary);
         color: white;
-        font-size: 0.95rem;
+        font-size: clamp(0.8125rem, 1.65vw, 0.875rem);
         font-weight: 700;
+        line-height: 1.2;
+        text-align: center;
         text-decoration: none;
+      }
+      @container (max-width: 20rem) {
+        .btn {
+          flex-direction: column;
+          min-height: 4.125rem;
+          padding-inline: 0.25rem;
+        }
+      }
+      .btn small {
+        display: block;
+        margin-top: 0.1rem;
+        font-weight: 400;
       }
       .btn.ghost {
         background: white;
@@ -184,8 +203,10 @@
                 <a
                   class="btn"
                   href="https://apps.apple.com/us/app/genart-ai-studio/id6755963035"
-                  >App Store</a
                 >
+                  <img class="store-icon store-icon--light" src="./images/apple.svg" alt="" width="16" height="16" />
+                  App Store
+                </a>
                 <a class="btn ghost" href="./genart/">Website</a>
               </div>
             </article>
@@ -206,9 +227,14 @@
                 <a
                   class="btn"
                   href="https://play.google.com/store/apps/details?id=net.nevitech.genvocabmaster.android"
-                  >Google Play</a
                 >
-                <span class="btn soon">App Store: coming soon</span>
+                  <img class="store-icon" src="./images/google-play.svg" alt="" width="16" height="16" />
+                  Google Play
+                </a>
+                <span class="btn soon">
+                  <img class="store-icon" src="./images/apple.svg" alt="" width="16" height="16" />
+                  <span>App Store<small>Coming soon</small></span>
+                </span>
                 <a class="btn ghost" href="./genword/">Website</a>
               </div>
             </article>

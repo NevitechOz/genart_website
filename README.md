@@ -13,6 +13,9 @@ Static site. The repo root is the document root.
 | `/app-ads.txt` | Must stay at the root for ad networks |
 
 All internal links are relative, so the site works at any host or path.
+The [Apple](https://commons.wikimedia.org/wiki/File:Apple_logo_black.svg) and
+[Google Play](https://commons.wikimedia.org/wiki/File:Google_Play_Arrow_logo.svg)
+store icons are hosted locally in `images/`.
 
 ## Commands
 

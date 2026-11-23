@@ -19,6 +19,7 @@
     <meta property="og:site_name" content="GenWord" />
     <meta property="og:image" content="./images/og-image.jpg" />
     <link rel="icon" href="./images/icon.png" />
+    <link rel="stylesheet" href="../store-icons.css" />
     <style>
       :root {
         --primary: #2b5fe8;
@@ -57,7 +58,7 @@
         text-align: center;
       }
 
-      .hero img {
+      .hero .app-icon {
         width: 128px;
         height: 128px;
         border-radius: 28px;
@@ -78,20 +79,28 @@
 
       .store-buttons {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 1rem;
+        gap: clamp(0.5rem, 2vw, 1rem);
         margin-top: 2rem;
       }
 
       .store-button {
-        display: inline-block;
-        min-width: 220px;
-        padding: 0.9rem 1.8rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 0;
+        gap: 0.5em;
+        max-width: 220px;
+        min-height: 56px;
+        padding: 0.65rem clamp(0.5rem, 2vw, 1.25rem);
+        border: 1px solid transparent;
         border-radius: 999px;
         background: white;
         color: var(--primary);
+        font-size: clamp(0.875rem, 2.8vw, 1rem);
         font-weight: 700;
+        line-height: 1.2;
+        white-space: nowrap;
         text-decoration: none;
       }
 
@@ -104,6 +113,7 @@
 
       .store-button small {
         display: block;
+        margin-top: 0.15rem;
         font-weight: 400;
         font-size: 0.75rem;
         opacity: 0.85;
@@ -264,7 +274,7 @@
   <body>
     <header class="hero">
       <div class="container">
-        <img src="./images/icon.png" alt="GenWord app icon" />
+        <img class="app-icon" src="./images/icon.png" alt="GenWord app icon" />
         <h1>GenWord</h1>
         <p>
           Build Chinese, Japanese and Korean vocabulary with HSK, JLPT and TOPIK
@@ -276,11 +286,14 @@
           <a
             class="store-button"
             href="https://play.google.com/store/apps/details?id=net.nevitech.genvocabmaster.android"
-            >Google Play<small>Get it on Android</small></a
           >
-          <span class="store-button soon"
-            >App Store<small>Coming soon</small></span
-          >
+            <img class="store-icon" src="../images/google-play.svg" alt="" width="20" height="20" />
+            <span>Google Play<small>Get it on Android</small></span>
+          </a>
+          <span class="store-button soon">
+            <img class="store-icon store-icon--light" src="../images/apple.svg" alt="" width="20" height="20" />
+            <span>App Store<small>Coming soon</small></span>
+          </span>
         </div>
       </div>
     </header>
