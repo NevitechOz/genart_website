@@ -11,6 +11,7 @@ Static site. The repo root is the document root.
 | `/genmeal/` | GenMeal offline meal planner landing page |
 | `/pages/` | Shared legal pages: `privacy`, `terms`, `copyright`, `contact_us` (also served without `.html`, which the app stores link to) |
 | `/app-ads.txt` | Must stay at the root for ad networks |
+| `/robots.txt` | Allows all crawlers; without it the host answers this path with the home page |
 
 All internal links are relative, so the site works at any host or path.
 The [Apple](https://commons.wikimedia.org/wiki/File:Apple_logo_black.svg) and
